@@ -1,0 +1,100 @@
+<svg viewBox="0 0 700 500" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', sans-serif">
+
+  <!-- Background -->
+  <rect width="700" height="500" fill="#1a1a2e" rx="16"/>
+
+  <!-- Title -->
+  <text x="350" y="40" text-anchor="middle" font-size="18" font-weight="700" fill="white">Store BI Assistant — Architecture</text>
+  <line x1="60" y1="55" x2="640" y2="55" stroke="rgba(124,58,237,0.4)" stroke-width="1"/>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arr" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M1 2L9 5L1 8" fill="none" stroke="#a78bfa" stroke-width="1.5" stroke-linecap="round"/>
+    </marker>
+  </defs>
+
+  <!-- ── STEP 1: User ── -->
+  <rect x="260" y="75" width="180" height="50" rx="10" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.25)" stroke-width="1"/>
+  <text x="350" y="97" text-anchor="middle" font-size="13" font-weight="600" fill="white">👤 User</text>
+  <text x="350" y="115" text-anchor="middle" font-size="10" fill="#a89fd8">Types a business question</text>
+
+  <!-- Arrow -->
+  <line x1="350" y1="125" x2="350" y2="148" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── STEP 2: Streamlit ── -->
+  <rect x="230" y="150" width="240" height="50" rx="10" fill="#7c3aed" stroke="#a78bfa" stroke-width="1"/>
+  <text x="350" y="172" text-anchor="middle" font-size="13" font-weight="600" fill="white">🖥️ Streamlit UI</text>
+  <text x="350" y="190" text-anchor="middle" font-size="10" fill="rgba(255,255,255,0.8)">app.py — web interface</text>
+
+  <!-- Arrow -->
+  <line x1="350" y1="200" x2="350" y2="223" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── STEP 3: Chain 1 ── -->
+  <rect x="80" y="225" width="200" height="60" rx="10" fill="rgba(124,58,237,0.25)" stroke="#7c3aed" stroke-width="1"/>
+  <text x="180" y="248" text-anchor="middle" font-size="12" font-weight="600" fill="#c4b5fd">⛓️ Chain 1</text>
+  <text x="180" y="265" text-anchor="middle" font-size="10" fill="rgba(196,181,253,0.85)">SQL Generator</text>
+  <text x="180" y="279" text-anchor="middle" font-size="10" fill="rgba(196,181,253,0.7)">Question + Schema → SQL</text>
+
+  <!-- Arrow -->
+  <line x1="180" y1="285" x2="180" y2="308" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── STEP 4: MySQL ── -->
+  <rect x="80" y="310" width="200" height="50" rx="10" fill="rgba(5,150,105,0.2)" stroke="#059669" stroke-width="1"/>
+  <text x="180" y="332" text-anchor="middle" font-size="12" font-weight="600" fill="#6ee7b7">🗄️ MySQL Database</text>
+  <text x="180" y="350" text-anchor="middle" font-size="10" fill="rgba(110,231,183,0.8)">Executes SQL · Returns data</text>
+
+  <!-- Arrow right to Chain 2 -->
+  <line x1="280" y1="335" x2="418" y2="335" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="350" y="325" text-anchor="middle" font-size="9" fill="#a89fd8">results</text>
+
+  <!-- ── STEP 5: Chain 2 ── -->
+  <rect x="420" y="310" width="200" height="60" rx="10" fill="rgba(29,78,216,0.25)" stroke="#3b82f6" stroke-width="1"/>
+  <text x="520" y="333" text-anchor="middle" font-size="12" font-weight="600" fill="#93c5fd">⛓️ Chain 2</text>
+  <text x="520" y="350" text-anchor="middle" font-size="10" fill="rgba(147,197,253,0.85)">Analyst</text>
+  <text x="520" y="364" text-anchor="middle" font-size="10" fill="rgba(147,197,253,0.7)">Results → Summary</text>
+
+  <!-- Arrow up to Streamlit -->
+  <path d="M520 310 Q520 255 470 200" fill="none" stroke="#a78bfa" stroke-width="1.5" marker-end="url(#arr)" stroke-dasharray="5 3"/>
+  <text x="510" y="258" text-anchor="middle" font-size="9" fill="#a89fd8">summary</text>
+
+  <!-- ── Llama 3.2 shared badge ── -->
+  <rect x="260" y="385" width="180" height="36" rx="10" fill="rgba(217,119,6,0.2)" stroke="rgba(217,119,6,0.5)" stroke-width="1"/>
+  <text x="350" y="401" text-anchor="middle" font-size="12" font-weight="600" fill="#fcd34d">🦙 Llama 3.2</text>
+  <text x="350" y="415" text-anchor="middle" font-size="10" fill="rgba(252,211,77,0.8)">Runs locally via Ollama</text>
+
+  <!-- Dotted lines from Llama to both chains -->
+  <line x1="260" y1="400" x2="230" y2="270" stroke="rgba(217,119,6,0.35)" stroke-width="1" stroke-dasharray="4 3"/>
+  <line x1="440" y1="400" x2="470" y2="370" stroke="rgba(217,119,6,0.35)" stroke-width="1" stroke-dasharray="4 3"/>
+
+  <!-- Schema loader note -->
+  <rect x="420" y="225" width="200" height="50" rx="10" fill="rgba(5,150,105,0.15)" stroke="rgba(5,150,105,0.4)" stroke-width="1"/>
+  <text x="520" y="247" text-anchor="middle" font-size="12" font-weight="600" fill="#6ee7b7">📋 Schema Loader</text>
+  <text x="520" y="265" text-anchor="middle" font-size="10" fill="rgba(110,231,183,0.75)">Auto-reads DB structure</text>
+
+  <!-- Arrow schema to chain 1 -->
+  <line x1="420" y1="250" x2="282" y2="250" stroke="rgba(5,150,105,0.5)" stroke-width="1.5" stroke-dasharray="5 3" marker-end="url(#arr)"/>
+  <text x="352" y="243" text-anchor="middle" font-size="9" fill="rgba(110,231,183,0.7)">schema</text>
+
+  <!-- ── Bottom pills ── -->
+  <rect x="60" y="452" width="90" height="20" rx="10" fill="rgba(124,58,237,0.3)" stroke="rgba(124,58,237,0.5)" stroke-width="0.5"/>
+  <text x="105" y="466" text-anchor="middle" font-size="9" fill="#c4b5fd" font-weight="500">LangChain</text>
+
+  <rect x="158" y="452" width="80" height="20" rx="10" fill="rgba(217,119,6,0.3)" stroke="rgba(217,119,6,0.5)" stroke-width="0.5"/>
+  <text x="198" y="466" text-anchor="middle" font-size="9" fill="#fcd34d" font-weight="500">Llama 3.2</text>
+
+  <rect x="246" y="452" width="60" height="20" rx="10" fill="rgba(5,150,105,0.3)" stroke="rgba(5,150,105,0.5)" stroke-width="0.5"/>
+  <text x="276" y="466" text-anchor="middle" font-size="9" fill="#6ee7b7" font-weight="500">MySQL</text>
+
+  <rect x="314" y="452" width="70" height="20" rx="10" fill="rgba(239,68,68,0.3)" stroke="rgba(239,68,68,0.5)" stroke-width="0.5"/>
+  <text x="349" y="466" text-anchor="middle" font-size="9" fill="#fca5a5" font-weight="500">Streamlit</text>
+
+  <rect x="392" y="452" width="80" height="20" rx="10" fill="rgba(29,78,216,0.3)" stroke="rgba(59,130,246,0.5)" stroke-width="0.5"/>
+  <text x="432" y="466" text-anchor="middle" font-size="9" fill="#93c5fd" font-weight="500">SQLAlchemy</text>
+
+  <rect x="480" y="452" width="70" height="20" rx="10" fill="rgba(255,255,255,0.08)" stroke="rgba(255,255,255,0.2)" stroke-width="0.5"/>
+  <text x="515" y="466" text-anchor="middle" font-size="9" fill="rgba(255,255,255,0.7)" font-weight="500">Python 3.11</text>
+
+  <text x="640" y="466" text-anchor="middle" font-size="9" fill="rgba(168,159,216,0.5)">100% Local</text>
+
+</svg>
