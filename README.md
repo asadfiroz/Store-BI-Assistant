@@ -1,7 +1,7 @@
 # Store BI Assistant
 
 > An AI-powered Business Intelligence tool that lets non-technical users 
-> ask business questions in plain English and get instant answers from a 
+> ask business questions in Natural language and get instant answers from a 
 > real database — no SQL knowledge required.**
 
 ![Python](https://img.shields.io/badge/Python-3.11-blue?logo=python)
